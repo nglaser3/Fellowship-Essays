@@ -4,8 +4,34 @@
 \usepackage{mathptmx} %times-new-roman
 
 \begin{document}
+As part of my research with the Multiphysics and Multiscale Simulations
+research group at the University of Illinois Urbana-Champaign, I investigated
+the applicability of Functional Expansion Tallies (FETs) to complex,
+non-homogeneous reactor geometries using OpenMC, a Monte Carlo neutron
+transport code. The most complex geometry I studied was a TRistructural
+ISOtropic fuel (TRISO) particle compact --- a small hexagonal graphite block
+containing tens of thousands of TRISO particles. The simulation involved
+500,000 particles, 1,000 batches (500 inactive and 500 active), and a 200th
+order Zernike FET (20,101 polynomials). This FET tallied kappa-fission, the
+recoverable energy production rate due to fission. The problem ran on 4 CPU
+cores with a wall time of approximately four hours. The results revealed that
+even a 200th order Zernike FET failed to accurately approximate the radial and
+angular power distribution due to steep power gradients at material interfaces.
+This highlighted the challenge of applying FETs to problems with complex,
+non-homogenous geometries.
 
-As part of my research with the Multiphysics and Multiscale Simulations research group at the University of Illinois Urbana-Champaign, I investigated the applicability of Functional Expansion Tallies (FETs) to complex, non-homogeneous reactor geometries using OpenMC, a Monte Carlo neutron transport code. The most complex geometry I studied was a TRistructural ISOtropic fuel (TRISO) particle compact --- a small hexagonal graphite block containing tens of thousands of TRISO particles. The simulation involved 500,000 particles, 1,000 batches (500 inactive and 500 active), and a 200th order Zernike FET (20,101 polynomials). This FET tallied kappa-fission, the recoverable energy production rate due to fission. The problem ran on 4 CPU cores with a wall time of approximately four hours. The results revealed that even a 200th order Zernike FET failed to accurately approximate the radial and angular power distribution due to steep power gradients at material interfaces. This highlighted the challenge of applying FETs to problems with complex, non-homogenous geometries.
-
-With computational resources 100 times more powerful, I could expand the Zernike FET to a much higher radial order, potentially capturing the steep gradients more effectively. Alternatively, I could model an entire array of hexagonal compacts, and apply the Zernike FET over all of the compacts. This would potentially result in a better approximation of the mean power distribution by reducing the relative impact of hyper-local dependencies. However, expanding from a single compact to a full array introduces mathematical challenges. The Zernike family is orthogonal over a unit disc, perfectly aligning with the cylindrical center of a single compact, the portion of the compact that is filled with TRISO particles. A full array would no longer conform to this geometry and would require a sophisticated mapping of the unit disc to an irregular polygon. This mapping is not yet available in OpenMC, presenting a significant mathematical hurdle that would need to be addressed to fully leverage the increased computational power. 
+With computational resources 100 times more powerful, I could expand the
+Zernike FET to a much higher radial order, potentially capturing the steep
+gradients more effectively. Alternatively, I could model an entire array of
+hexagonal compacts, and apply the Zernike FET over all of the compacts. This
+would potentially result in a better approximation of the mean power
+distribution by reducing the relative impact of hyper-local dependencies.
+However, expanding from a single compact to a full array introduces
+mathematical challenges. The Zernike family is orthogonal over a unit disc,
+perfectly aligning with the cylindrical center of a single compact, the portion
+of the compact that is filled with TRISO particles. A full array would no
+longer conform to this geometry and would require a sophisticated mapping of
+the unit disc to an irregular polygon. This mapping is not yet available in
+OpenMC, presenting a significant mathematical hurdle that would need to be
+addressed to fully leverage the increased computational power. 
 \end{document}

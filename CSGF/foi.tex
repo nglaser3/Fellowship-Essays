@@ -5,13 +5,40 @@
 
 \begin{document}
 
-A key challenge in nuclear energy is enabling the deployment of next-generation nuclear reactors. These reactors offer improved efficiency, enhanced fuel cycles, and greater safety compared to Light Water Reactors (LWRs). While the deployment of LWRs was supported by precedent and extensive experimental data, advanced reactors lack this foundation. High-fidelity simulations can fill this gap, enabling accurate modeling where data is scarce. These simulations are particularly critical for advanced reactors, which require high spatial and temporal resolution to capture their complex physics.
+A key challenge in nuclear energy is enabling the deployment of next-generation
+nuclear reactors. These reactors offer improved efficiency, enhanced fuel
+cycles, and greater safety compared to Light Water Reactors (LWRs). While the
+deployment of LWRs was supported by precedent and extensive experimental data,
+advanced reactors lack this foundation. High-fidelity simulations can fill this
+gap, enabling accurate modeling where data is scarce. These simulations are
+particularly critical for advanced reactors, which require high spatial and
+temporal resolution to capture their complex physics.
 
-While computational tools exist for modeling neutron populations with high spatial and temporal resolution, few are optimized to leverage modern high-performance computing (HPC) systems with GPU architectures. My research seeks to address this by adapting deterministic neutron transport methods for acceleration with GPUs. I aim to explore two methods: domain decomposition and the Random Ray Method (TRRM) for the Method of Characteristics (MOC).
+While computational tools exist for modeling neutron populations with high
+spatial and temporal resolution, few are optimized to leverage modern
+high-performance computing (HPC) systems with GPU architectures. My research
+seeks to address this by adapting deterministic neutron transport methods for
+acceleration with GPUs. I aim to explore two methods: domain decomposition and
+The Random Ray Method (TRRM) for the Method of Characteristics (MOC).
 
-Domain decomposition has been successfully applied on CPU architectures for multi-processor simulations of deterministic neutron transport and for GPU architectures in Shift, a stochastic neutron transport code. This makes it a promising approach for deterministic simulations. TRRM, a variation of MOC, reduces memory constraints while remaining parallelizable. However, traditional CPU-based parallelization schemes for TRRM are inefficient on GPUs. A potential solution lies in Radiance Cascades (RC), a method from computer graphics that transforms TRRM's long characteristics into cascading series of short characteristics. This technique not only saturates GPUs with sufficient work but also improves spatial resolution. While RC have been demonstrated for single-core, two-dimensional problems, I aim to extend it to multi-core, three-dimensional applications.
+Domain decomposition has been successfully applied on CPU architectures for
+multi-processor simulations of deterministic neutron transport and for GPU
+architectures in Shift, a stochastic neutron transport code. This makes it a
+promising approach for deterministic simulations. TRRM, a variation of MOC,
+reduces memory constraints while remaining parallelizable. However, traditional
+CPU-based parallelization schemes for TRRM are inefficient on GPUs. A potential
+solution lies in Radiance Cascades (RC), a method from computer graphics that
+transforms TRRM's long characteristics into cascading series of short
+characteristics. This technique not only saturates GPUs with sufficient work
+but also improves spatial resolution. While RC have been demonstrated for
+single-core, two-dimensional problems, I aim to extend it to multi-core,
+three-dimensional applications.
 
-Accelerating deterministic neutron transport with GPUs could expedite advanced reactor design, development, and licensing. By streamlining these processes, next-generation reactors could be deployed more rapidly, advancing the transition to clean nuclear energy and helping achieve the United States’ carbon emission reduction goals.
+Accelerating deterministic neutron transport with GPUs could expedite advanced
+reactor design, development, and licensing. By streamlining these processes,
+next-generation reactors could be deployed more rapidly, advancing the
+transition to clean nuclear energy and helping achieve the United States’
+carbon emission reduction goals.
 \end{document}
 
 
